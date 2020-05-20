@@ -26,20 +26,12 @@ class NotificationHelper {
             .setSmallIcon(R.drawable.ic_notification)
             .setContentTitle("My notification")
             .setContentText("Hello World!")
-            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
             // Set the intent that will fire when the user taps the notification
             .setContentIntent(pendingIntent)
             .setAutoCancel(true)
 
-//        val mBuilder =
-//            NotificationCompat.Builder(context!!, CHANNEL_ID)
-//                .setSmallIcon(R.drawable.ic_notification)
-//                .setContentTitle(title)
-//                .setContentText(body)
-//                .setContentIntent(pendingIntent)
-//                .setAutoCancel(true)
-//                .setPriority(NotificationCompat.PRIORITY_HIGH)
-//        val mNotificationMgr = NotificationManagerCompat.from(context)
-//        mNotificationMgr.notify(1, mBuilder.build())
+        val mNotificationMgr = NotificationManagerCompat.from(context)
+        mNotificationMgr.notify(1, mBuilder.build())
     }
 }
