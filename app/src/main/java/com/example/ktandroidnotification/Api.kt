@@ -7,11 +7,11 @@ import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
 
 interface Api {
-
     @FormUrlEncoded
     @POST("send")
     fun sendNotification(
-        @Field("email") email: String,
-        @Field("password") password: String
-    ) : Call<ResponseBody>
+        @Field("token") token: String?,
+        @Field("title") title: String?,
+        @Field("body") body: String?
+    ): Call<ResponseBody?>?
 }

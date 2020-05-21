@@ -2,6 +2,7 @@ package com.example.ktandroidnotification
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -60,11 +61,9 @@ class ProfileActivity : AppCompatActivity() {
                 if (dataSnapshot.exists()) {
                     for (dsUser in dataSnapshot.children) {
                         val user =
-                            dsUser.getValue(
-                                User::class.java
-                            )!!
+                            dsUser.getValue(User::class.java)
                         //userList.add(user)
-                        adapter.add(UserItem(user))
+                        adapter.add(UserItem(user!!))
                     }
 
                     adapter.setOnItemClickListener { item, view ->
@@ -73,6 +72,7 @@ class ProfileActivity : AppCompatActivity() {
                         val intent = Intent(view.context, SendNotificationActivity::class.java)
                         intent.putExtra(USER_KEY, userItem.user)
                         startActivity(intent)
+                        //Log.d(TAG, "UserItem: " + userItem.user)
                     }
 
                 } else {
