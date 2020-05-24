@@ -13,7 +13,7 @@ import com.example.ktandroidnotification.utils.toast
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
-
+// for reference branch
 class MainActivity : AppCompatActivity() {
     companion object {
         val TAG = "MainActivity"
