@@ -1,16 +1,15 @@
 package com.example.ktandroidnotification
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ktandroidnotification.utils.toast
 import kotlinx.android.synthetic.main.activity_send_notification.*
-import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import java.io.IOException
 
 
@@ -19,10 +18,6 @@ class SendNotificationActivity : AppCompatActivity() {
     companion object {
         val TAG = "SendNotification"
     }
-
-//    private val textView: TextView? = null
-//    private val editTextTitle: EditText? = null
-//    private  var editTextBody:EditText? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -83,25 +78,5 @@ class SendNotificationActivity : AppCompatActivity() {
             ) {
             }
         })
-
-//        val call: Call<ResponseBody> = api.sendNotification(user.token, title, body)
-//        call.enqueue(object : Callback<ResponseBody> {
-//            override fun onResponse(
-//                call: Call<ResponseBody?>,
-//                response: Response<ResponseBody?>
-//            ) {
-//                try {
-//                    Toast.makeText(
-//                        this@SendNotificationActivity,
-//                        response.body()?.string(),
-//                        Toast.LENGTH_LONG
-//                    ).show()
-//                } catch (e: IOException) {
-//                    e.printStackTrace()
-//                }
-//            }
-//
-//            override fun onFailure(call: Call<ResponseBody?>, t: Throwable?) {}
-//        })
     }
 }
